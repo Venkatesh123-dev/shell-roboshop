@@ -60,11 +60,11 @@ VALIDATE $? "Downloading cart app directory"
 cd /app 
 VALIDATE $? "Changing app directory"
 
-rm -rf /app
-VALIDATE $? "Removing existing app directory"
+rm -rf /app/*
+VALIDATE $? "Removing existing code"
 
 unzip /tmp/cart.zip &>>$LOG_FILE
-VALIDATE $? "Unzip Cart"
+VALIDATE $? "unzip cart"
 
 npm install &>>$LOG_FILE
 VALIDATE $? "Installing depecncies"
