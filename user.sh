@@ -55,17 +55,17 @@ mkdir -p /app
 VALIDATE $? "Creaing app directory"
 
 curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip &>>$LOG_FILE
-VALIDATE $? "Downloading  app directory"
+VALIDATE $? "Downloading  user application"
 
 cd /app 
 VALIDATE $? "Changing app directory"
 
 rm -rf /app &>>$LOG_FILE
-VALIDATE $? "Removing existing app directory"
-
+VALIDATE $? "Removing existing app code"
 
 unzip /tmp/user.zip &>>$LOG_FILE
-VALIDATE $? "Unzip  app directory"
+VALIDATE $? "unzip user"
+
 
 npm install &>>$LOG_FILE
 VALIDATE $? "Installing depecncies"
