@@ -54,7 +54,7 @@ fi
 mkdir -p /app 
 VALIDATE $? "Creaing app directory"
 
-curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip
+curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip &>>$LOG_FILE
 VALIDATE $? "Downloading cart app directory"
 
 cd /app 
@@ -64,13 +64,13 @@ rm -rf /app
 VALIDATE $? "Removing existing app directory"
 
 
-unzip /tmp/cart.zip
-VALIDATE $? "Unziping  app directory"
+unzip /tmp/cart.zip &>>$LOG_FILE
+VALIDATE $? "Unziping Cart"
 
-npm install 
+npm install &>>$LOG_FILE
 VALIDATE $? "Installing depecncies"
 
-cp $SCRIPT_DIR/cart.service /etc/systemd/system/cart.service
+cp $SCRIPT_DIR/cart.service /etc/systemd/system/cart.service &>>$LOG_FILE
 VALIDATE $? "Copy cart service"
 
 systemctl daemon-reload
