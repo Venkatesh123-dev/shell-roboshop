@@ -54,23 +54,23 @@ fi
 mkdir -p /app 
 VALIDATE $? "Creaing app directory"
 
-curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
+curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip &>>$LOG_FILE
 VALIDATE $? "Downloading  app directory"
 
 cd /app 
 VALIDATE $? "Changing app directory"
 
-rm -rf /app
+rm -rf /app &>>$LOG_FILE
 VALIDATE $? "Removing existing app directory"
 
 
-unzip /tmp/user.zip
+unzip /tmp/user.zip &>>$LOG_FILE
 VALIDATE $? "Unzip  app directory"
 
-npm install 
+npm install &>>$LOG_FILE
 VALIDATE $? "Installing depecncies"
 
-cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service
+cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service &>>$LOG_FILE
 VALIDATE $? "Copy user service"
 
 systemctl daemon-reload
