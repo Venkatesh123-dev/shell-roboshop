@@ -4,17 +4,6 @@ This repository contains **Bash scripts to automate the deployment of Roboshop m
 
 ---
 
-## Project Pictures
-
-### Pic 1
-![Roboshop Pic 1](./roboshop-pics/roboshop-1.png)
-
-### Pic 2
-![Roboshop Pic 2](./roboshop-pics/roboshop-2.png)
-
-### Pic 3
-![Roboshop Pic 3](./roboshop-pics/roboshop-3.png)
-
 ## 📂 Repository Structure
 
 | File | Service / Purpose | Description |
@@ -104,6 +93,17 @@ Scripts are idempotent; re-running will skip already configured steps
 
 Error trapping prints line number and command for easier debugging
 
+
+## Project Pictures
+
+### Pic 1
+![Roboshop Pic 1](./roboshop-pics/roboshop-1.png)
+
+### Pic 2
+![Roboshop Pic 2](./roboshop-pics/roboshop-2.png)
+
+### Pic 3
+![Roboshop Pic 3](./roboshop-pics/roboshop-3.png)
 
 
 
